@@ -1,24 +1,49 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# chatspaceデータベース設計
 
-Things you may want to cover:
+### テーブルの構成
 
-* Ruby version
+1. usersテーブル
+1. messagesテーブル
+1. groupsテーブル
+1. joinsテーブル（usersテーブルとgroupsテーブルの中間テーブル）
 
-* System dependencies
+### 各テーブルのカラム構成
 
-* Configuration
+補足  
+- MUL：重複可能な外部制約キー（indexが貼られる）  
+- PRI：重複不可な外部制約キー（indexが貼られる）  
+- UNI：一意性制約（indexが貼られる）  
+- 自動生成されるカラムは省略  
+- deviseで生成するカラムは省略  
 
-* Database creation
+##### usersテーブル
 
-* Database initialization
+| Field |     Type     | Null | Key | Default | Extra |
+|-------|--------------|------|-----|---------|-------|
+| name  | varcher(255) | NO   | UNI | NULL    |       |
+| email | varcher(255) | NO   | UNI | NULL    |       |
 
-* How to run the test suite
+##### messagesテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+|  Field   |     Type     | Null | Key | Default |          Extra           |
+|----------|--------------|------|-----|---------|--------------------------|
+| body     | text         | YES  |     | NULL    |                          |
+| image    | varcher(255) | YES  |     | NULL    |                          |
+| group_id | int(11)      | NO   | MUL | NULL    | type references on Rails |
+| user_id  | int(11)      | NO   | MUL | NULL    | type references on Rails |
 
-* Deployment instructions
+##### groupsテーブル
 
-* ...
+| Field |     Type     | Null | Key | Default | Extra |
+|-------|--------------|------|-----|---------|-------|
+| name  | varcher(255) | NO   |     | NULL    |       |
+
+
+##### joinsテーブル（中間テーブル）
+
+|  Field   |   Type  | Null | Key | Default |          Extra           |
+|----------|---------|------|-----|---------|--------------------------|
+| group_id | int(11) | NO   | MUL | NULL    | type references on Rails |
+| user_id  | int(11) | NO   | MUL | NULL    | type references on Rails |
