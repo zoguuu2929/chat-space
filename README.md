@@ -4,7 +4,7 @@
 
 | Field |     Type     | Null | Key | unique | Default | index |
 |-------|--------------|------|-----|--------|---------|-------|
-| name  | varcher(255) | NOT  |     |  UNI   |  NULL   |       |
+| name  | string       | NOT  |     |  UNI   |  NULL   |       |
 
 ##### messagesテーブル
 
@@ -14,14 +14,14 @@
 | image     | varcher(255) |      |     |        |  NULL   |       |
 | group_id  | int(11)      | NOT  | MUL |        |  NULL   |   1   |
 | user_id   | int(11)      | NOT  | MUL |        |  NULL   |   1   |
-* references: group, foreign_key:true
+* references: group_id, foreign_key:true
 * references: user_id, foreign_key:true
 
 ##### groupsテーブル
 
 |   Field   |     Type     | Null | Key | unique | Default | index |
 |-----------|--------------|------|-----|--------|---------|-------|
-| name      | varcher(255) | NOT  |     |        |  NULL   |       |
+| name      | string       | NOT  |     |        |  NULL   |       |
 
 
 ##### group_userテーブル
@@ -30,5 +30,5 @@
 |-----------|--------------|------|-----|--------|---------|-------|
 | group_id  | int(11)      | NOT  | MUL |  UNI   |  NULL   |   1   |
 | user_id   | int(11)      | NOT  | MUL |  UNI   |  NULL   |   1   |
-* references: group, foreign_key:true
+* references: group_id, foreign_key:true
 * references: user_id, foreign_key:true
