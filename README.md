@@ -19,13 +19,15 @@
 
 ##### groupsテーブル
 
-|   Field   |     Type     | Null | Key | unique | Default | index | |-----------|--------------|------|-----|--------|---------|-------|
+|   Field   |     Type     | Null | Key | unique | Default | index |
+|-----------|--------------|------|-----|--------|---------|-------|
 | name      | varcher(255) | NOT  |     |        |  NULL   |       |
 
 
 ##### group_userテーブル
 
-|   Field   |     Type     | Null | Key | unique | Default | index | |-----------|--------------|------|-----|--------|---------|-------|
+|   Field   |     Type     | Null | Key | unique | Default | index |
+|-----------|--------------|------|-----|--------|---------|-------|
 | group_id  | int(11)      | NOT  | MUL |  UNI   |  NULL   |   1   |
 | user_id   | int(11)      | NOT  | MUL |  UNI   |  NULL   |   1   |
 * references: group, foreign_key:true
