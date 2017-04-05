@@ -4,7 +4,7 @@
 
 | Field |     Type     | Null | Key | unique | Default | index |
 |-------|--------------|------|-----|--------|---------|-------|
-| name  | string       | NOT  |     |  UNI   |  NULL   |       |
+| name  | string       | NOT  |     |  UNI   |  NULL   |   1   |
 
 ##### messagesテーブル
 
@@ -24,7 +24,7 @@
 | name      | string       | NOT  |     |        |  NULL   |       |
 
 
-##### group_userテーブル
+##### group_usersテーブル
 
 |   Field   |     Type     | Null | Key | unique | Default | index |
 |-----------|--------------|------|-----|--------|---------|-------|
