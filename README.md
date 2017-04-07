@@ -7,9 +7,12 @@
 | name  | string       | NOT  |     |  UNI   |  NULL   |   1   |
 
 ##### Association
+
+```
 has_many :group_users
 has_many :groups, :through => :user_groups
 has_many :messages
+```
 
 ### messagesテーブル
 
@@ -19,12 +22,18 @@ has_many :messages
 | image     | varcher(255) |      |     |        |  NULL   |       |
 | group_id  | int(11)      | NOT  | MUL |        |  NULL   |   1   |
 | user_id   | int(11)      | NOT  | MUL |        |  NULL   |   1   |
-* references: group_id, foreign_key:true
-* references: user_id, foreign_key:true
+
+```
+references: group_id, foreign_key:true
+references: user_id, foreign_key:true
+```
 
 #### Association
+
+```
 belongs_to :group
 belongs_to :user
+```
 
 ### groupsテーブル
 
@@ -32,10 +41,12 @@ belongs_to :user
 |-----------|--------------|------|-----|--------|---------|-------|
 | name      | string       | NOT  |     |        |  NULL   |       |
 
+```
 ####Association
 has_many :group_users
 has_many :users, :through => :user_groups
 has_many :messages
+```
 
 ### group_usersテーブル
 
@@ -43,9 +54,15 @@ has_many :messages
 |-----------|--------------|------|-----|--------|---------|-------|
 | group_id  | int(11)      | NOT  | MUL |  UNI   |  NULL   |   1   |
 | user_id   | int(11)      | NOT  | MUL |  UNI   |  NULL   |   1   |
-* references: group_id, foreign_key:true
-* references: user_id, foreign_key:true
+
+```
+references: group_id, foreign_key:true
+references: user_id, foreign_key:true
+```
 
 ####Association
+
+```
 belongs_to :group
 belongs_to :user
+```
