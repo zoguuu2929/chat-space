@@ -10,7 +10,7 @@
 
 ```
 has_many :group_users
-has_many :groups, :through => :user_groups
+has_many :groups, through: :user_groups
 has_many :messages
 ```
 
@@ -44,7 +44,7 @@ belongs_to :user
 ```
 ####Association
 has_many :group_users
-has_many :users, :through => :user_groups
+has_many :users, through: :user_groups
 has_many :messages
 ```
 
