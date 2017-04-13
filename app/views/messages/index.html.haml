@@ -1,0 +1,47 @@
+%header
+  .header__message
+    チャットグループが作成されました。
+%body
+  .chat-side
+    %div.chat-side__top
+      %div.chat-side__top__name
+        user name
+      %div.fa.fa-pencil-square-o
+      %div.fa.fa-cog
+    .chat-side__groups
+      %div.chat-side__group
+        %p.chat-side__group--name
+          グループ名
+        %p.chat-side__group--message
+          まだメッセージはありません
+      %div.chat-side__group
+        %p.chat-side__group--name
+          グループ名
+        %p.chat-side__group--message
+          まだメッセージはありません
+  %div.chat-main
+    %div.chat-main__group
+      %h3.chat-main__group--name
+        Sampleグループ
+      %h3.chat-main__group--edit
+        Edit
+      %p.chat-main__group--member
+        Members: I, MY, ME, MINE
+    %div.chat-main__message
+      %div.chat-main__message--name
+        NAME
+      %div.chat-main__message--time
+        2017/04/04
+      %div.chat-main__message--text
+        Hello World!
+      %div.chat-main__message--name
+        NAME
+      %div.chat-main__message--time
+        2017/04/04
+      %div.chat-main__message--text
+        Hello World!
+    %div.chat-main__footer
+      =form_tag do
+        =text_field_tag :text, "", class: 'text-field', placeholder: 'type a message'
+        =button_tag 'Send' , class: 'send-btn' , type: :submit
+        .fa.fa-picture-o
