@@ -18,7 +18,7 @@ header{
   height: 100vh;
   float: left;
   background-color: $cobalt;
-    .chat-side__top {
+    &__top {
       font-size: 16px;
       font-weight: bold;
       background-color: $darkblue;
@@ -38,17 +38,17 @@ header{
         right: 20px;
         color: $white;
       }
-    .chat-side__groups{
+    &__groups {
       background-color:$cobalt;
         .chat-side__group{
           color:$white;
           padding: 0 20px 0 20px;
-            .chat-side__group--name{
+            &--name{
               font-size: 15px;
               margin-bottom: 5px;
               margin-top: 20px;
             }
-            .chat-side__group--message{
+            &--message{
               font-size: 11px;
               margin-bottom:40px;
             }
@@ -59,14 +59,14 @@ header{
   float: left;
   width: calc(100vw - 300px);
   height: 100vh;
-    .chat-main__group{
+    &__group{
       padding:0 0 0 40px;
       position:relative;
-        .chat-main__group--name{
+        &--name{
           margin: 35px 0 15px 0;
           font-size: 20px
         }
-        .chat-main__group--edit{
+        &--edit{
           height: 40px;
           border: 2px solid $skyblue;
           color: $skyblue;
@@ -76,30 +76,30 @@ header{
           top:28px;
           right: 40px;
         }
-        .chat-main__group--member{
+        &--member{
           padding-bottom: 15px;
           font-size: 12px;
           color: $gray;
           opacity: 0.7;
         }
     }
-    .chat-main__message{
+    &__message{
       padding:0 40px 0 40px;
       position:relative;
       height: calc( 100vh - 15% - 90px );
       overflow-y: scroll;
-        .chat-main__message--name{
+        &--name{
           font-weight: bold;
           font-size: 16px;
           color: $black;
           padding: 0 10px 10px 0;
           float: left;
         }
-        .chat-main__message--time{
+        &--time{
           font-size: 12px;
           color: $gray;
         }
-        .chat-main__message--text{
+        &--text{
           font-size: 14px;
           color: #434A54;
           padding-bottom: 40px;
