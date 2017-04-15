@@ -21,7 +21,7 @@ header{
       font-size: 16px;
       font-weight: bold;
       background-color: $darkblue;
-      padding: 50px 20px 30px 20px;
+      padding: 50px 20px 30px;
       color: $white;
       position:relative;
     }
@@ -59,10 +59,10 @@ header{
   width: calc(100vw - 300px);
   height: 100vh;
     &__group{
-      padding:0 0 0 40px;
+      padding-left:40px;
       position:relative;
         &--name{
-          margin: 35px 0 15px 0;
+          margin: 35px 0 15px;
           font-size: 20px
         }
         &--edit{
@@ -83,7 +83,7 @@ header{
         }
     }
     &__message{
-      padding:0 40px 0 40px;
+      padding:0 40px;
       position:relative;
       height: calc( 100vh - 15% - 90px );
       overflow-y: scroll;
