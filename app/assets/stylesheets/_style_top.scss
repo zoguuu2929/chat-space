@@ -1,4 +1,7 @@
-
+/*
+ *= require_tree .
+ *= require_self
+*/
 header{
   position: fixed;
   background-color: $skyblue;
@@ -102,10 +105,10 @@ header{
           color: $gray;
         }
         &--text{
+          @include clearfix;
           font-size: 14px;
           color: #434A54;
           padding-bottom: 40px;
-          clear: both;
         }
     }
     .chat-main__footer{
