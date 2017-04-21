@@ -5,9 +5,11 @@
   .chat-side
     .chat-side__top
       .chat-side__top__name
-        user name
-      .fa.fa-pencil-square-o
-      .fa.fa-cog
+        user
+        =link_to new_group_path do
+          %i.fa.fa-pencil-square-o
+        =link_to edit_user_registration_path do
+          %i.fa.fa-cog
     .chat-side__groups
       .chat-side__group
         %p.chat-side__group--name
@@ -24,7 +26,7 @@
       %h3.chat-main__group--name
         Sampleグループ
       %h3.chat-main__group--edit
-        Edit
+        = link_to 'Edit', 'https://www.google.co.jp/', :class => "chat-main__header--group-edit-btn"
       %p.chat-main__group--member
         Members: I, MY, ME, MINE
     .chat-main__message

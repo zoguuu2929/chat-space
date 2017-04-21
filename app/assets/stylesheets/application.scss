@@ -1,6 +1,6 @@
-@import "./reset";
+@import "reset";
 @import "font-awesome";
-@import "./variables";
-@import "./clearfix";
-@import "./style_top";
-
+@import "variables";
+@import "mixin/clearfix";
+@import "modules/user";
+@import "modules/style_top";
