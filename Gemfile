@@ -59,4 +59,3 @@ end
 
 gem 'devise'
 gem 'font-awesome-rails'
-
