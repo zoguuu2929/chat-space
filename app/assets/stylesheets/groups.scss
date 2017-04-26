@@ -1,3 +1,4 @@
+
 .chat-group-form {
   width: 980px;
   margin: 60px auto;
@@ -6,6 +7,8 @@
   border: 1px solid $lightgray;
   border-radius: 5px;
   box-sizing: border-box;
+
+  @include clearfix;
 
   h1 {
     letter-spacing: 2px;
@@ -41,6 +44,7 @@
 
   .chat-group-form__field {
     margin-top: 30px;
+
 
     .chat-group-form__field--left {
       float: left;
