@@ -2,11 +2,11 @@
   color: $white;
   text-align: center;
 
-  &-succsess{
+  &--succsess{
     background-color: $point-color;
   }
 
-  &-error{
+  &--error{
     background-color: $error-color;
   }
 }
