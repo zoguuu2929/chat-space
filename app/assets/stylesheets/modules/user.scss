@@ -1,13 +1,13 @@
 .account-page {
-  &__inner {
+  .account-page__inner {
     width: 980px;
     margin: 60px auto;
     padding: 60px;
-    background-color: $white;
-    border: 1px solid $lightgray;
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 5px;
 
-    &__inner--left, .account-page__iright {
+    .account-page__inner--left, .account-page__inner--right {
       float: left;
       width: 50%;
     }
@@ -18,7 +18,7 @@
     }
   }
 
-  &__header {
+  .account-page__header {
     h2 {
       margin-bottom: 10px;
       letter-spacing: 3px;
@@ -30,7 +30,7 @@
         display: block;
         width: 60px;
         margin-top: 5px;
-        border-bottom: 1px solid $skyblue;
+        border-bottom: 1px solid #38aef0;
       }
     }
 
@@ -42,8 +42,8 @@
 
     .btn {
       margin-top: 20px;
-      color: $white;
-      background-color: $darkgray;
+      color: #fff;
+      background-color: #ccc;
       font-size: 14px;
     }
   }
@@ -51,7 +51,7 @@
   .field {
     margin-bottom: 10px;
 
-    &-label {
+    .field-label {
       padding: 10px 0;
       letter-spacing: 1px;
       font-size: 14px;
@@ -85,14 +85,14 @@
   input[type='submit'] {
     float: left;
     margin-top: 20px;
-    color: $white;
-    background-color: $skyblue;
+    color: #fff;
+    background-color: #38aef0;
   }
 
   .field-label {
     .field_with_errors {
       display: inline-block;
-      color: $orange;
+      color: #d65f4c;
       font-weight: 400;
     }
   }
@@ -109,7 +109,7 @@
         right: 0;
         bottom: 0;
         width: 5px;
-        background-color: $orange;
+        background-color: #d65f4c;
       }
     }
   }
@@ -118,7 +118,7 @@
 #error_explanation {
   margin: 20px 0;
   padding: 20px 30px;
-  border: 1px solid $lightgray;
+  border: 1px solid #ddd;
   border-radius: 2px;
 
   h2 {
