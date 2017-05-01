@@ -91,7 +91,10 @@
     position: relative;
 
     .chat-main__footer-body{
-      position: relative;
+      position: absolute;
+      top: 35px;
+
+
 
       #message_body{
         height: 20px;
@@ -104,9 +107,8 @@
       }
 
       .chat-file{
-        position: absolute;
-        top: 35px;
-        right: 135px;
+        position: relative;
+        right: 30px;
 
         .image{
           display: none;

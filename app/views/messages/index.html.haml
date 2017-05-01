@@ -15,7 +15,7 @@
 
   .chat-main__body
     .chat-main__body--messages-list
-      = render :partial => "message", :collection => @messages
+      = render @messages
   .chat-main__footer
     = form_for [@group, @message] do |f|
       .chat-main__footer-body

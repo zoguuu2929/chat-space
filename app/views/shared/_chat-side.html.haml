@@ -15,5 +15,5 @@
   .chat-side__groups
     .chat-side__groups-list
       - current_user.groups.each do |group|
-        = render partial: 'shared/group', locals: {group: group}
+        = render 'shared/group', group: group
 
