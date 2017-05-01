@@ -1,0 +1,12 @@
+.notice{
+  color: $white;
+  text-align: center;
+
+  &--succsess{
+    background-color: $point-color;
+  }
+
+  &--error{
+    background-color: $error-color;
+  }
+}
