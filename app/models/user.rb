@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :groups, through: :group_users
   has_many :messages
 
+  validates :name, presence: true, length: { maximum: 6 }
+
   def update_without_current_password(params, *options)
     params.delete(:current_password)
 
