@@ -42,6 +42,7 @@ group :development, :test do
   gem 'factory_girl_rails', "~> 4.4.1"
   gem 'faker'
   gem 'forgery'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -55,7 +56,6 @@ group :development do
   gem 'better_errors'
   # better_errorsの画面上にirb/pry(PERL)を表示する
   gem 'binding_of_caller'
-  gem 'pry-rails'
 
 end
 
