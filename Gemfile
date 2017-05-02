@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'pry-rails'
 end
 
 group :development do
@@ -51,17 +52,21 @@ group :development do
   gem 'better_errors'
   # better_errorsの画面上にirb/pry(PERL)を表示する
   gem 'binding_of_caller'
-  gem 'pry-rails'
 
+  gem 'erb2haml'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'faker'
+  gem 'forgery'
+  gem 'rails-controller-testing'
+  gem 'factory_girl_rails', "~> 4.4.1"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
-
-group :development do
-  gem 'erb2haml'
-end
 
 gem 'devise'
 gem 'font-awesome-rails'

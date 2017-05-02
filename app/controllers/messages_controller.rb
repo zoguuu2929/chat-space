@@ -13,6 +13,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = current_user.messages.new(message_params)
+    @messages = @group.messages
     if @message.save
       redirect_to group_messages_path(@group), notice: '新規メッセージが送信されました'
     else
