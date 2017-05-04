@@ -15,7 +15,7 @@ RSpec.describe MessagesController, type: :controller do
 
     describe 'GET #create' do
       it 'returns http success' do
-        get :create, group_id: group.id, message: { body: 'サンプル' }
+        get :create, group_id: group.id, message: { text: 'サンプル' }
         expect(response).to have_http_status(:found)
         expect(response).to redirect_to(new_user_session_path)
       end

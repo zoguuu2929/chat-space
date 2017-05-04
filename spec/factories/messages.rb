@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :message do
-    body 'メッセージサンプル'
-    chat_group
+    text 'メッセージサンプル'
+    group
     user
   end
 end
