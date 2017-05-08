@@ -70,3 +70,5 @@ gem 'haml-rails'
 
 gem 'devise'
 gem 'font-awesome-rails'
+# 画像アップロード
+gem 'carrierwave'
