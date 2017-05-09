@@ -50,9 +50,8 @@
   overflow-y: scroll;
   position:relative;
 
-
   &--messages-list{
-    clear:both;
+    clear: both;
     padding: 26px 40px 0;
 
     .chat-main__body--message{
@@ -98,8 +97,6 @@
     .chat-main__footer-body{
       position: absolute;
       top: 35px;
-
-
 
       #message_body{
         height: 20px;

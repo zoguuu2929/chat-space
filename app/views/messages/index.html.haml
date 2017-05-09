@@ -1,6 +1,5 @@
 = render 'shared/chat-side'
 
-
 .chat-main
 
   .chat-main__header
@@ -15,8 +14,10 @@
 
   .chat-main__body
     .chat-main__body--messages-list
-    -@messages.each do |message|
-      = render partial: 'message', locals: {message: message}
+    = render @messages
+    /下二文を上一文に省略できる
+    / -@messages.each do |message|
+    /   = render partial: 'message', locals: {message: message}
 
   .chat-main__footer
     = form_for [@group, @message] do |f|
