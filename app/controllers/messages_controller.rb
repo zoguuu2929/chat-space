@@ -9,29 +9,37 @@ class MessagesController < ApplicationController
   def index
     @messages = @group.messages
     @message = Message.new
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @group.messages.includes(:user)}
+    end
   end
 
   def create
+    # @message = Message.new(message_params)
+    # @message.user = current_user
+    # 上二文を下の一文に省略
     @message = current_user.messages.new(message_params)
-    @messages = @group.messages
-    if @message.save
-      redirect_to group_messages_path(@group), notice: '新規メッセージが送信されました'
-    else
-      flash.now.alert = 'メッセージを入力して下さい'
-      render :index
+    respond_to do |format|
+      if @message.save
+        format.html { redirect_to group_messages_path(@group), notice: 'Message was successfully created.' }
+        format.json
+      else
+        format.html { render :index }
+        format.json { render json: @message.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   private
-
   def message_params
-    params.require(:message).permit(:text, :image).merge(group_id: params[:group_id], user_id: current_user.id)
+    params.require(:message).permit(:text, :image).merge(group_id: params[:group_id])
   end
 
   def set_group
-    @group = group(params[:group_id])
+    @group = Group.find(params[:group_id])
   end
   #include Findで呼び出す。extend ActiveSupport::Concernではparamsを使えないのでここで(params[:group_id])を指定する必要がある。
 
 end
-

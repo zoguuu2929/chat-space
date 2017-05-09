@@ -46,11 +46,15 @@
 
 }
 
-
 //左カラム下部
 .chat-side__groups{
   background-color: $lightcobalt;
   height: 85%;
+  overflow-y: scroll;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
 
   &-list{
     height: 100%;

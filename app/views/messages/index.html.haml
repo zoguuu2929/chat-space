@@ -1,6 +1,5 @@
 = render 'shared/chat-side'
 
-
 .chat-main
 
   .chat-main__header
@@ -15,12 +14,16 @@
 
   .chat-main__body
     .chat-main__body--messages-list
-      = render @messages
+    = render @messages
+    /下二文を上一文に省略できる
+    / -@messages.each do |message|
+    /   = render partial: 'message', locals: {message: message}
+
   .chat-main__footer
     = form_for [@group, @message] do |f|
       .chat-main__footer-body
-        =f.text_field :text, placeholder: 'type a message'
+        = f.text_field :text, placeholder: 'type a message'
         %label.chat-file
-          %input.image
+          = f.file_field :image
           %i.fa.fa-image
-      = f.submit 'Send', class: 'submit'
+            = f.submit "Send", "data-disable-with": "送信中...", id: 'chat-footer__send-btn', class: 'chat-footer__send-btn'
