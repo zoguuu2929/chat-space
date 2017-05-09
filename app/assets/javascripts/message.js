@@ -8,19 +8,19 @@ $(function() {
     }
 
     var html =
-    '<li class="chat-main__body--message">' +
-      '<p class="chat-main__body--message-name">' +
+    '<div class="chat-main__body--message">' +
+      '<div class="chat-main__body--message-name">' +
           message.user +
-      '</p>' +
-      '<p class="chat-main__body--message-time">' +
+      '</div>' +
+      '<div class="chat-main__body--message-time">' +
           message.created_at +
-      '</p>' +
-      '<p class="chat-main__body--message-body">' +
+      '</div>' +
+      '<div class="chat-main__body--message-body">' +
           message.text +
-      '</p>' +
-      '<br>' +
+      '</div>' +
+      '\n' +
       imageHtml
-    '</li>'
+    '</div>'
     return html;
   }
 
@@ -29,7 +29,6 @@ $(function() {
     e.preventDefault();
     var form = $('#new_message');
     var $this = $(this);
-
     //追記部分
     $('#chat-main__footer__send-btn').removeAttr('data-disable-with');
 
@@ -47,7 +46,6 @@ $(function() {
       // サーバーから値が正しく返ってきた場合
       .done(function(data) {
         var html = buildHTML(data);
-        console.log(html);
         $('.chat-main__body--message').append(html);
         $this.get(0).reset();
       })

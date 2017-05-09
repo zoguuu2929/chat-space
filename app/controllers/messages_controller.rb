@@ -17,13 +17,14 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
-    @message.user = current_user
+    # @message = Message.new(message_params)
+    # @message.user = current_user
+    # 上二文を下の一文に省略
+    @message = current_user.messages.new(message_params)
     respond_to do |format|
       if @message.save
         format.html { redirect_to group_messages_path(@group), notice: 'Message was successfully created.' }
         format.json
-
       else
         format.html { render :index }
         format.json { render json: @message.errors, status: :unprocessable_entity }
@@ -33,7 +34,7 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:text, :image).merge(group_id: params[:group_id], user_id: current_user.id)
+    params.require(:message).permit(:text, :image).merge(group_id: params[:group_id])
   end
 
   def set_group
